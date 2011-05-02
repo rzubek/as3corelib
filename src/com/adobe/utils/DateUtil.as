@@ -394,7 +394,7 @@ package com.adobe.utils
 				var dateParts:Array = str.split(" ");
 				var day:String = null;
 				
-				if (dateParts[0].search(/\d/) == -1)
+				if (String(dateParts[0]).search(/\d/) == -1)
 				{
 					day = dateParts.shift().replace(/\W/, "");
 				}
