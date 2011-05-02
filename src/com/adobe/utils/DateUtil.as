@@ -85,7 +85,51 @@ package com.adobe.utils
 		*/	
 		public static function getShortMonthIndex(m:String):int
 		{
-			return DateBase.monthNamesShort.indexOf(m);
+			// Astro hack: RSS dates are always(?) english, don't use localized month names.
+			var tempIndex:int = -1;
+			switch(m)
+			{
+				case "Jan":
+					tempIndex = 0;
+					break;
+				case "Feb":
+					tempIndex = 1;
+					break;
+				case "Mar":
+					tempIndex = 2;
+					break;
+				case "Apr":
+					tempIndex = 3;
+					break;
+				case "May":
+					tempIndex = 4;
+					break;
+				case "Jun":
+					tempIndex = 5;
+					break;
+				case "Jul":
+					tempIndex = 6;
+					break;
+				case "Aug":
+					tempIndex = 7;
+					break;
+				case "Sep":
+					tempIndex = 8;
+					break;
+				case "Oct":
+					tempIndex = 9;
+					break;
+				case "Nov":
+					tempIndex = 10;
+					break;
+				case "Dec":
+					tempIndex = 11;
+					break;
+				default:
+					break;
+			}
+			return tempIndex;
+			//return DateBase.monthNamesShort.indexOf(m);
 		}
 		
 		/**
