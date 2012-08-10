@@ -171,10 +171,13 @@ package com.adobe.serialization.json
 							
 							// ensure that there are 4 digits by adjusting
 							// the # of zeros accordingly.
-							var zeroPad:String = hexCode.length == 2 ? "00" : "000";
+							while( hexCode.length < 4 )
+							{
+								hexCode = "0" + hexCode;
+							}
 							
 							// create the unicode escape sequence with 4 hex digits
-							s += "\\u" + zeroPad + hexCode;
+							s += "\\u" + hexCode;
 						}
 						else
 						{
