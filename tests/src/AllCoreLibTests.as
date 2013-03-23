@@ -1,6 +1,10 @@
 package
 {
 	import com.adobe.air.crypto.EncryptionKeyGeneratorTest;
+	import com.adobe.air.filesystem.FileMonitorTest;
+	import com.adobe.air.filesystem.VolumeMonitorTest;
+	import com.adobe.air.filesystem.events.FileMonitorEventTest;
+	import com.adobe.air.net.events.ResourceCacheEventTest;
 	import com.adobe.crypto.HMACMD5Test;
 	import com.adobe.crypto.HMACSHA1Test;
 	import com.adobe.crypto.MD5Test;
@@ -18,22 +22,7 @@ package
 	import com.adobe.utils.NumberFormatterTest;
 	import com.adobe.utils.StringUtilTest;
 	import com.adobe.utils.XMLUtilTest;
-	import com.adobe.air.filesystem.VolumeMonitorTest;
-	import com.adobe.air.filesystem.events.FileMonitorEventTest;
-	import com.adobe.air.net.events.ResourceCacheEventTest;
-	import com.adobe.protocols.events.ConnectedEventTest;
-	import com.adobe.protocols.events.DatabaseEventTest;
-	import com.adobe.protocols.events.DefinitionEventTest;
-	import com.adobe.protocols.events.DefinitionHeaderEventTest;
-	import com.adobe.protocols.events.DictionaryServerEventTest;
-	import com.adobe.protocols.events.DisconnectedEventTest;
-	import com.adobe.protocols.events.ErrorEventTest;
-	import com.adobe.protocols.events.MatchEventTest;
-	import com.adobe.protocols.events.MatchStrategiesEventTest;
-	import com.adobe.protocols.events.NoMatchEventTest;
-	import com.adobe.protocols.util.CompletedResponseEventTest;
 	import com.adobe.webapis.events.ServiceEventTest;
-	import com.adobe.air.filesystem.FileMonitorTest;
 	
 	[Suite]
 	[RunWith( "org.flexunit.runners.Suite" )]
@@ -63,19 +52,6 @@ package
 		// images
 		public var jPGEncoderTest:JPGEncoderTest;
 		public var pNGEncoderTest:PNGEncoderTest;
-		
-		// protocols.dict
-		public var connectedEventTest:ConnectedEventTest;
-		public var databaseEventTest:DatabaseEventTest;
-		public var definitionEventTest:DefinitionEventTest;
-		public var definitionHeaderEventTest:DefinitionHeaderEventTest;
-		public var dictionaryServerEventTest:DictionaryServerEventTest;
-		public var disconnectedEventTest:DisconnectedEventTest;
-		public var errorEventTest:ErrorEventTest;
-		public var matchEventTest:MatchEventTest;
-		public var matchStrategiesEventTest:MatchStrategiesEventTest;
-		public var noMatchEventTest:NoMatchEventTest;
-		public var completedResponseEventTest:CompletedResponseEventTest;
 		
 		// webapis
 		public var serviceEventTest:ServiceEventTest;
