@@ -32,8 +32,6 @@
 
 package com.adobe.utils
 {
-	import mx.formatters.DateBase;
-
 	/**
 	* 	Class that contains static utility methods for manipulating and working
 	*	with Dates.
@@ -44,27 +42,6 @@ package com.adobe.utils
 	*/	
 	public class DateUtil
 	{
-	
-		/**
-		*	Returns the English Short Month name (3 letters) for the Month that
-		*	the Date represents.  	
-		* 
-		* 	@param d The Date instance whose month will be used to retrieve the
-		*	short month name.
-		* 
-		* 	@return An English 3 Letter Month abbreviation.
-		*
-		* 	@langversion ActionScript 3.0
-		*	@playerversion Flash 9.0
-		*	@tiptext
-		*
-		*	@see SHORT_MONTH
-		*/	
-		public static function getShortMonthName(d:Date):String
-		{
-			return DateBase.monthNamesShort[d.getMonth()];
-		}
-
 		/**
 		*	Returns the index of the month that the short month name string
 		*	represents. 	
@@ -132,126 +109,6 @@ package com.adobe.utils
 			//return DateBase.monthNamesShort.indexOf(m);
 		}
 		
-		/**
-		*	Returns the English full Month name for the Month that
-		*	the Date represents.  	
-		* 
-		* 	@param d The Date instance whose month will be used to retrieve the
-		*	full month name.
-		* 
-		* 	@return An English full month name.
-		*
-		* 	@langversion ActionScript 3.0
-		*	@playerversion Flash 9.0
-		*	@tiptext
-		*
-		*	@see FULL_MONTH
-		*/	
-		public static function getFullMonthName(d:Date):String
-		{
-			return DateBase.monthNamesLong[d.getMonth()];	
-		}
-
-		/**
-		*	Returns the index of the month that the full month name string
-		*	represents. 	
-		* 
-		* 	@param m A full month name.
-		* 
-		* 	@return A int that represents that month represented by the specifed
-		*	full month name.
-		*
-		* 	@langversion ActionScript 3.0
-		*	@playerversion Flash 9.0
-		*	@tiptext
-		*
-		*	@see FULL_MONTH
-		*/	
-		public static function getFullMonthIndex(m:String):int
-		{
-			return DateBase.monthNamesLong.indexOf(m);
-		}
-
-		/**
-		*	Returns the English Short Day name (3 letters) for the day that
-		*	the Date represents.  	
-		* 
-		* 	@param d The Date instance whose day will be used to retrieve the
-		*	short day name.
-		* 
-		* 	@return An English 3 Letter day abbreviation.
-		*
-		* 	@langversion ActionScript 3.0
-		*	@playerversion Flash 9.0
-		*	@tiptext
-		*
-		*	@see SHORT_DAY
-		*/	
-		public static function getShortDayName(d:Date):String
-		{
-			return DateBase.dayNamesShort[d.getDay()];	
-		}
-		
-		/**
-		*	Returns the index of the day that the short day name string
-		*	represents. 	
-		* 
-		* 	@param m A short day name.
-		* 
-		* 	@return A int that represents that short day represented by the specifed
-		*	full month name.
-		*
-		* 	@langversion ActionScript 3.0
-		*	@playerversion Flash 9.0
-		*	@tiptext
-		*
-		*	@see SHORT_DAY
-		*/			
-		public static function getShortDayIndex(d:String):int
-		{
-			return DateBase.dayNamesShort.indexOf(d);
-		}
-
-		/**
-		*	Returns the English full day name for the day that
-		*	the Date represents.  	
-		* 
-		* 	@param d The Date instance whose day will be used to retrieve the
-		*	full day name.
-		* 
-		* 	@return An English full day name.
-		*
-		* 	@langversion ActionScript 3.0
-		*	@playerversion Flash 9.0
-		*	@tiptext
-		*
-		*	@see FULL_DAY
-		*/	
-		public static function getFullDayName(d:Date):String
-		{
-			return DateBase.dayNamesLong[d.getDay()];	
-		}		
-
-		/**
-		*	Returns the index of the day that the full day name string
-		*	represents. 	
-		* 
-		* 	@param m A full day name.
-		* 
-		* 	@return A int that represents that full day represented by the specifed
-		*	full month name.
-		*
-		* 	@langversion ActionScript 3.0
-		*	@playerversion Flash 9.0
-		*	@tiptext
-		*
-		*	@see FULL_DAY
-		*/		
-		public static function getFullDayIndex(d:String):int
-		{
-			return DateBase.dayNamesLong.indexOf(d);
-		}
-
 		/**
 		*	Returns a two digit representation of the year represented by the 
 		*	specified date.
@@ -500,61 +357,6 @@ package com.adobe.utils
 				throw new Error(eStr);
 			}
             return finalDate;
-		}
-	     
-		/**
-		* Returns a date string formatted according to RFC822.
-		*
-		* @param d
-		*
-		* @returns
-		*
-		* @langversion ActionScript 3.0
-		* @playerversion Flash 9.0
-		* @tiptext
-		*
-		* @see http://asg.web.cmu.edu/rfc/rfc822.html
-		*/	
-		public static function toRFC822(d:Date):String
-		{
-			var date:Number = d.getUTCDate();
-			var hours:Number = d.getUTCHours();
-			var minutes:Number = d.getUTCMinutes();
-			var seconds:Number = d.getUTCSeconds();
-			var sb:String = new String();
-			sb += DateBase.dayNamesShort[d.getUTCDay()];
-			sb += ", ";
-			
-			if (date < 10)
-			{
-				sb += "0";
-			}
-			sb += date;
-			sb += " ";
-			//sb += DateUtil.SHORT_MONTH[d.getUTCMonth()];
-			sb += DateBase.monthNamesShort[d.getUTCMonth()];
-			sb += " ";
-			sb += d.getUTCFullYear();
-			sb += " ";
-			if (hours < 10)
-			{			
-				sb += "0";
-			}
-			sb += hours;
-			sb += ":";
-			if (minutes < 10)
-			{			
-				sb += "0";
-			}
-			sb += minutes;
-			sb += ":";
-			if (seconds < 10)
-			{			
-				sb += "0";
-			}
-			sb += seconds;
-			sb += " GMT";
-			return sb;
 		}
 	     
 		/**

@@ -11,7 +11,6 @@ package
 	import com.adobe.crypto.SHA1Test;
 	import com.adobe.crypto.SHA224Test;
 	import com.adobe.crypto.SHA256Test;
-	import com.adobe.crypto.WSSEUsernameTokenTest;
 	import com.adobe.images.JPGEncoderTest;
 	import com.adobe.images.PNGEncoderTest;
 	import com.adobe.net.URITest;
@@ -44,7 +43,6 @@ package
 		public var sHA1Test:SHA1Test;
 		public var sHA224Test:SHA224Test;
 		public var sHA256Test:SHA256Test;
-		public var wSSEUsernameTokenTest:WSSEUsernameTokenTest;
 		
 		// net
 		public var uRITest:URITest;

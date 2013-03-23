@@ -34,8 +34,6 @@ package com.adobe.utils
 {
 	import flexunit.framework.TestCase;
 	
-	import mx.formatters.DateBase;
-
 	public class DateUtilTest extends TestCase
 	{	
 		
@@ -141,30 +139,6 @@ package com.adobe.utils
 			assertTrue("DateUtil.compareDates(d1, d2) == 0",
 											DateUtil.compareDates(d1, d2) == 0);
 		}		
-		
-		public function testRFC822():void
-		{
-			var d1:Date = new Date();
-			
-			d1.setMilliseconds(0);
-			
-			var s:String = DateUtil.toRFC822(d1);
-			
-			var d2:Date = DateUtil.parseRFC822(s);
-			
-			assertTrue("DateUtil.compareDates(d1, d2) == 0",
-											DateUtil.compareDates(d1, d2) == 0);
-		}
-		
-		public function testToRFC822():void
-		{
-			// "Mon, 05 Dec 2005 14:55:43 -0800";
-			
-			var d:Date = new Date(Date.UTC(2005,0,1,1,1,1,0));
-			
-			assertTrue("DateUtil.toRFC822(d) == \"Sat, 01 Jan 2005 01:01:01 GMT\"",
-					DateUtil.toRFC822(d) == "Sat, 01 Jan 2005 01:01:01 GMT");
-		}
 		
 		public function testGetAMPM():void
 		{
@@ -317,120 +291,6 @@ package com.adobe.utils
 			d.fullYear = 7;
 			assertTrue("DateUtil.getShortYear(d) == \"7\"",
 								DateUtil.getShortYear(d) == "7");
-		}
-		
-		public function testGetFullDayIndex():void
-		{
-			
-			var len:int = DateBase.dayNamesLong.length;
-			
-			for(var i:int = 0; i < len; i++)
-			{
-				assertTrue("DateUtil.getFullDayIndex(DateBase.dayNamesLong["+i+"]) == i",
-								DateUtil.getFullDayIndex(DateBase.dayNamesLong[i]) == i);
-			}
-		}		
-		
-		public function testGetFullMonthIndex():void
-		{
-			//var len:int = FULL_MONTH.length;
-			var len:int = DateBase.monthNamesLong.length;
-			
-			for(var i:int = 0; i < len; i++)
-			{
-				assertTrue("DateUtil.getFullMonthIndex(DateBase.monthNamesLong["+i+"]) == i",
-								DateUtil.getFullMonthIndex(DateBase.monthNamesLong[i]) == i);
-			}
-		}
-		
-		public function testGetFullDayName():void
-		{
-			var d:Date;
-			
-			//var len:uint = FULL_DAY.length;
-			var len:int = DateBase.dayNamesLong.length;
-			
-			for(var i:uint = 0; i < len; i++)
-			{
-				//12-04-2005 is a sunday
-				d = new Date(2005,11, i + 4);
-				
-				assertTrue("DateUtil.getFullDayName(d) == DateBase.dayNamesLong["+i+"]",
-								DateUtil.getFullDayName(d) == DateBase.dayNamesLong[i]);
-			}
-		}		
-		
-		public function testGetFullMonthName():void
-		{
-			var d:Date;
-			
-			//var len:uint = FULL_MONTH.length;
-			var len:int = DateBase.monthNamesLong.length;
-			
-			for(var i:uint = 0; i < len; i++)
-			{
-				d = new Date(2005,i);
-				
-				assertTrue("DateUtil.getFullMonthName(d) == DateBase.monthNamesLong["+i+"]",
-								DateUtil.getFullMonthName(d) == DateBase.monthNamesLong[i]);
-			}
-		}		
-		
-		public function testGetShortDayIndex():void
-		{
-			//var len:int = SHORT_DAY.length;
-			var len:int = DateBase.dayNamesShort.length;
-			
-			for(var i:int = 0; i < len; i++)
-			{
-				assertTrue("DateUtil.getShortDayIndex(DateBase.dayNamesShort["+i+"]) == i",
-								DateUtil.getShortDayIndex(DateBase.dayNamesShort[i]) == i);
-			}
-		}		
-		
-		public function testGetShortMonthIndex():void
-		{
-			//var len:int = SHORT_MONTH.length;
-			var len:int = DateBase.monthNamesShort.length;
-			
-			for(var i:int = 0; i < len; i++)
-			{
-				assertTrue("DateUtil.getShortMonthIndex(DateBase.monthNamesShort["+i+"]) == i",
-								DateUtil.getShortMonthIndex(DateBase.monthNamesShort[i]) == i);
-			}
-		}
-		
-		public function testGetShortDayName():void
-		{
-			var d:Date;
-			
-			//var len:uint = SHORT_DAY.length;
-			var len:int = DateBase.dayNamesShort.length;
-			
-			for(var i:uint = 0; i < len; i++)
-			{
-				//12-04-2005 is a sunday
-				d = new Date(2005,11, i + 4);
-				
-				assertTrue("DateUtil.getShortDayName(d) == DateBase.dayNamesShort["+i+"]",
-								DateUtil.getShortDayName(d) == DateBase.dayNamesShort[i]);
-			}
-		}		
-		
-		public function testGetShortMonthName():void
-		{
-			var d:Date;
-			
-			//var len:uint = SHORT_MONTH.length;
-			var len:int = DateBase.monthNamesShort.length;
-			
-			for(var i:uint = 0; i < len; i++)
-			{
-				d = new Date(2005,i);
-				
-				assertTrue("DateUtil.getShortMonthName(d) == DateBase.monthNamesShort["+i+"]",
-								DateUtil.getShortMonthName(d) == DateBase.monthNamesShort[i]);
-			}
 		}
 	}
 }
