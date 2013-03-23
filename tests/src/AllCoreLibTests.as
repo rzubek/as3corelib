@@ -11,7 +11,6 @@ package
 	import com.adobe.images.JPGEncoderTest;
 	import com.adobe.images.PNGEncoderTest;
 	import com.adobe.net.URITest;
-	import com.adobe.serialization.json.JSONTest;
 	import com.adobe.utils.ArrayUtilTest;
 	import com.adobe.utils.DateUtilTest;
 	import com.adobe.utils.DictionaryUtilTest;
@@ -60,9 +59,6 @@ package
 		
 		// net
 		public var uRITest:URITest;
-		
-		// serialization
-		public var jSONTest:JSONTest;		
 		
 		// images
 		public var jPGEncoderTest:JPGEncoderTest;
