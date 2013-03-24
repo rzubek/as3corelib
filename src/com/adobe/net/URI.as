@@ -32,7 +32,7 @@
 
 package com.adobe.net
 {
-	import flash.utils.ByteArray;
+	
 	
 	/**
 	 * This class implements functions and utilities for working with URI's

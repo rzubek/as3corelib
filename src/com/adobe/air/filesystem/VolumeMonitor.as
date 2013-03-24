@@ -32,13 +32,13 @@
 
 package com.adobe.air.filesystem
 {
+	import com.adobe.air.filesystem.events.FileMonitorEvent;
+	
 	import flash.events.EventDispatcher;
-	import flash.utils.Timer;
 	import flash.events.TimerEvent;
 	import flash.filesystem.File;
 	import flash.utils.Dictionary;
-	import com.adobe.air.filesystem.events.FileMonitorEvent;
-	import com.adobe.utils.ArrayUtil;
+	import flash.utils.Timer;
 
 	/**
 	* Dispatched when a volume is added to the system.

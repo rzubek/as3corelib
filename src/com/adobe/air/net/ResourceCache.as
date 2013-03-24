@@ -32,6 +32,7 @@
 
 package com.adobe.air.net
 {
+	import com.adobe.air.net.events.ResourceCacheEvent;
 	import com.adobe.crypto.MD5;
 	import com.adobe.net.DynamicURLLoader;
 	
@@ -44,7 +45,6 @@ package com.adobe.air.net
 	import flash.net.URLLoaderDataFormat;
 	import flash.net.URLRequest;
 	import flash.utils.ByteArray;
-	import com.adobe.air.net.events.ResourceCacheEvent;
 
 	//todo: add event metadata
 

@@ -32,12 +32,12 @@
 
 package com.adobe.air.filesystem
 {
+	import com.adobe.air.filesystem.events.FileMonitorEvent;
+	
+	import flash.events.EventDispatcher;
+	import flash.events.TimerEvent;
 	import flash.filesystem.File;
 	import flash.utils.Timer;
-	import flash.events.TimerEvent;
-	import flash.events.Event;
-	import flash.events.EventDispatcher;
-	import com.adobe.air.filesystem.events.FileMonitorEvent;
 
 	/*
 		Todo:
