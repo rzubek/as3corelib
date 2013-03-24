@@ -33,12 +33,12 @@
 package com.adobe.air.crypto
 {
 
+	import com.adobe.utils.Base64Encoder;
+	
 	import flash.data.EncryptedLocalStore;
 	import flash.utils.ByteArray;
 	
 	import flexunit.framework.TestCase;
-	
-	import mx.utils.Base64Encoder;
 	
 	public class EncryptionKeyGeneratorTest extends TestCase {
 		
