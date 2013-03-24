@@ -1,4 +1,13 @@
-An ActionScript 3 Library that contains a number of classes and utilities for working with ActionScript? 3. These include classes for MD5 and SHA 1 hashing, Image encoders, as well as general String, Number and Date APIs.
+An ActionScript 3 Library that contains a number of classes and 
+utilities for working with ActionScript 3. These include classes 
+for MD5 and SHA 1 hashing, Image encoders, as well as general 
+String, Number and Date APIs.
+
+This is a fork of the original as3corelib library, updated to 
+work with Flash 11, and to remove dependencies on Flex.
+Original: https://github.com/mikechambers/as3corelib
+
+---
 
 Copyright 2008 Adobe Systems Incorporated. All rights reserved.
 Code is released under a BSD License:
